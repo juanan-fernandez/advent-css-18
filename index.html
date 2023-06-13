@@ -3,7 +3,7 @@
 
 <head>
    <meta charset="UTF-8" />
-   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+   <link rel="icon" type="image/png" href="/images/reset-password.png" />
    <link rel="stylesheet" type="text/css" href="./src/style.css">
    <link rel="stylesheet" type="text/css" href="./src/form-style.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +18,35 @@
             <div class="input-container">
                <input name="password" class="password" type="text" readonly />
                <div class="input-container__img"><img src="images/copy.svg"></div>
+            </div>
+            <div class="slidecontainer">
+               <input type="range" min="5" max="25" value="10" class="slider" id="pass-len">
+               <p class="pass-len-text">10 characters</p>
+            </div>
+            <div class="checkboxes">
+               <div class="checkbox-row"><input type="checkbox">
+                  <p class="checkbox-row__text">Include Symbols <span class="checkbox-row__text--light">(@#$%)</span>
+                  </p>
+               </div>
+               <div class="checkbox-row"><input type="checkbox">
+                  <p class="checkbox-row__text">Include Numbers <span class="checkbox-row__text--light">(1234)</span>
+                  </p>
+               </div>
+               <div class="checkbox-row"><input type="checkbox">
+                  <p class="checkbox-row__text">Include Lowercase Characters <span
+                        class="checkbox-row__text--light">(abcde)</span>
+                  </p>
+               </div>
+               <div class="checkbox-row"><input type="checkbox">
+                  <p class="checkbox-row__text">Include Uppercase Characters <span
+                        class="checkbox-row__text--light">(ABCDE)</span>
+                  </p>
+               </div>
+               <div class="checkbox-row"><input type="checkbox">
+                  <p class="checkbox-row__text">Exclude Similar Characters <span class="checkbox-row__text--light">(i,
+                        l, 1, L, o, 0, O)</span>
+                  </p>
+               </div>
             </div>
          </div>
       </form>

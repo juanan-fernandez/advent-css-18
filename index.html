@@ -16,7 +16,7 @@
       <form>
          <div class="form-container">
             <div class="input-container">
-               <input name="password" class="password" type="text" readonly />
+               <input name="password" class="password" type="text" readonly id="password" />
                <div class="input-container__img"><img src="images/copy.svg"></div>
             </div>
             <div class="slidecontainer">
@@ -24,30 +24,36 @@
                <p class="pass-len-text">10 characters</p>
             </div>
             <div class="checkboxes">
-               <div class="checkbox-row"><input type="checkbox">
+               <div class="checkbox-row"><input id="symbols" type="checkbox" class="css-checkbox">
+                  <label for="symbols" class="css-label">&nbsp;</label>
                   <p class="checkbox-row__text">Include Symbols <span class="checkbox-row__text--light">(@#$%)</span>
                   </p>
                </div>
-               <div class="checkbox-row"><input type="checkbox">
+               <div class="checkbox-row"><input type="checkbox" id="numbers" class="css-checkbox">
+                  <label for="numbers" class="css-label">&nbsp;</label>
                   <p class="checkbox-row__text">Include Numbers <span class="checkbox-row__text--light">(1234)</span>
                   </p>
                </div>
-               <div class="checkbox-row"><input type="checkbox">
-                  <p class="checkbox-row__text">Include Lowercase Characters <span
+               <div class="checkbox-row"><input type="checkbox" id="lowercase" class="css-checkbox">
+                  <label for="lowercase" class="css-label">&nbsp;</label>
+                  <p class="checkbox-row__text"> Lowercase Characters <span
                         class="checkbox-row__text--light">(abcde)</span>
                   </p>
                </div>
-               <div class="checkbox-row"><input type="checkbox">
+               <div class="checkbox-row"><input type="checkbox" id="uppercase" class="css-checkbox">
+                  <label for="uppercase" class="css-label">&nbsp;</label>
                   <p class="checkbox-row__text">Include Uppercase Characters <span
                         class="checkbox-row__text--light">(ABCDE)</span>
                   </p>
                </div>
-               <div class="checkbox-row"><input type="checkbox">
+               <div class="checkbox-row"><input type="checkbox" id="notsimilar" class="css-checkbox">
+                  <label for="notsimilar" class=" css-label">&nbsp;</label>
                   <p class="checkbox-row__text">Exclude Similar Characters <span class="checkbox-row__text--light">(i,
                         l, 1, L, o, 0, O)</span>
                   </p>
                </div>
             </div>
+            <button class="btn-generate">Generate</button>
          </div>
       </form>
    </div>

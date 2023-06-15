@@ -16,11 +16,14 @@
 }
 
 .input-container input {
-	width: 470px;
+	width: 460px;
 	background: #ffffff;
 	box-shadow: 0px 0px 32px #cadbd2;
 	border-radius: 12px;
 	border: none;
+	font-size: 2rem;
+	font-weight: 900;
+	padding: 0.1rem 1.1rem;
 }
 
 .input-container input:focus {
@@ -87,12 +90,51 @@
 	gap: 0.8rem;
 }
 
+.css-label {
+	width: 40px;
+	height: 40px;
+	background-position: 0 0;
+	background-image: url('/images/checkbox--unchecked.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+input[type='checkbox'].css-checkbox {
+	display: none;
+}
+
+input[type='checkbox'].css-checkbox:checked + label.css-label {
+	background-position: 0 0;
+	background-image: url('/images/checkbox--checked.svg');
+}
+
 .checkbox-row__text {
 	margin: 0;
 	font-size: 1.2rem;
 	font-weight: 700;
+	line-height: 40px;
 }
 
 .checkbox-row__text--light {
 	font-weight: lighter;
+}
+
+.btn-generate {
+	margin-top: 2rem;
+	border: none;
+	background-color: #56858a;
+	color: #f1f7f4;
+	padding: 1rem 2rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	transition: all ease 0.6s;
+}
+
+.btn-generate:hover,
+.btn-generate:focus {
+	color: #56858a;
+	background-color: #f1f7f4;
+	transform: scale(1.1);
+	box-shadow: 0px 0px 32px #cadbd2;
+	outline: none;
 }

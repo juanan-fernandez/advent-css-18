@@ -1,4 +1,29 @@
+const rangeSlider = document.getElementById('pass-len') as HTMLInputElement;
 const actionButton = document.querySelector('.btn-generate');
+const copyButton = document.querySelector('.input-container__img');
+
+rangeSlider?.addEventListener('change', function () {
+	const rangeVal = document.querySelector('.pass-len-text')!;
+	rangeVal.textContent = this!.value + ' characters';
+});
+
+const ToClipBoard = () => {
+	// Get the text field
+	const copyText = document.getElementById('password') as HTMLInputElement;
+
+	if (copyText.value.length > 0) {
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); // For mobile devices
+		// Copy the text inside the text field
+		navigator.clipboard.writeText(copyText.value).then(() => {
+			alert('Copied the text: ' + copyText.value);
+		});
+
+		return;
+	}
+};
+
+copyButton?.addEventListener('click', ToClipBoard);
 
 type PasswordRules = {
 	withNumbers: boolean;
@@ -26,9 +51,11 @@ const generatePassword = ({
 	if (withLowerCase) passwordSource += 'abcdefghijklmnopqrstuvwxyz';
 	if (withUpperCase) passwordSource += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+	if (!passwordSource) return passwordSource;
+
 	if (withNotSimilar)
 		passwordSource = passwordSource
-			.split(',')
+			.split('')
 			.filter(character => !excludedChars.includes(character))
 			.join();
 
@@ -51,9 +78,7 @@ actionButton?.addEventListener('click', ev => {
 			(document.getElementById('pass-len') as HTMLInputElement)!.value
 		),
 	};
-	console.log(configPassword);
-	const passwordResult: HTMLInputElement = document.getElementById(
-		'password'
-	) as HTMLInputElement;
+
+	const passwordResult = document.getElementById('password') as HTMLInputElement;
 	passwordResult!.value = generatePassword(configPassword);
 });

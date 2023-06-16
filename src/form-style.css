@@ -34,6 +34,7 @@
 	height: 72px;
 	display: flex;
 	place-items: center;
+	cursor: pointer;
 }
 
 .slidecontainer {

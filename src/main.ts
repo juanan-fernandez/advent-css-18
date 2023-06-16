@@ -8,13 +8,11 @@ rangeSlider?.addEventListener('change', function () {
 });
 
 const ToClipBoard = () => {
-	// Get the text field
 	const copyText = document.getElementById('password') as HTMLInputElement;
 
 	if (copyText.value.length > 0) {
 		copyText.select();
 		copyText.setSelectionRange(0, 99999); // For mobile devices
-		// Copy the text inside the text field
 		navigator.clipboard.writeText(copyText.value).then(() => {
 			alert('Copied the text: ' + copyText.value);
 		});
